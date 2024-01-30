@@ -1,11 +1,10 @@
 import React from 'react'
-import Image from 'next/image'
 
 const LandingPage = () => {
     return (
         <div className="h-screen w-screen bg-primary md:flex">
             <div id="left" className="flex justify-center md:items-center items-end md:h-full md:w-1/2 h-1/2 w-full">
-                <Image className="h-full" src="/assets/baby2.png" alt="" />
+                <img className="h-full" src="/assets/baby2.png" alt="" />
             </div>
             <div id="right" className="md:h-full md:w-1/2 h-1/2 w-full flex justify-center items-center flex-col" >
                 <p className="my-6 font-serif">New Collection</p>
