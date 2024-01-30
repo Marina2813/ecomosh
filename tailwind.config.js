@@ -16,7 +16,8 @@ module.exports = {
         primary: "#9da48e", 
         textColor:"#323924",
         textColor2: "#ffffff",
-        boxcolor: "#828973"
+        boxcolor: "#828973",
+        gradColor: "#FFF8E3",
       }
     },
   },
