@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Options = () => {
   return (
@@ -24,7 +25,7 @@ const Options = () => {
             <p className='text-textColor cursivefont text-2xl'>to celebrate a special moment</p>
         </div>
         <div id="right" className="md:flex justify-center items-center h-full w-1/2 hidden">
-            <img className="h-full" src="/assets/babywear.png" alt="" />
+            <Image className="h-full" src="/assets/babywear.png" alt="" />
         </div>
       </div>
     </div>
