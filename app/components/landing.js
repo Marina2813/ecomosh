@@ -1,3 +1,4 @@
+
 import React from 'react'
 
 const LandingPage = () => {
@@ -11,6 +12,7 @@ const LandingPage = () => {
                 <p className="mb-6 text-textColor2 cursivefont text-3xl">Shop Ours</p>
                 <h1 className="text-textColor text-5xl font-bold font-serif">BABYWEAR</h1>
                 <button className="bg-textColor text-primary py-2 px-4 rounded-xl my-6 capitalize font-serif">SHOP NOW</button>
+                
             </div>
         </div>
     )

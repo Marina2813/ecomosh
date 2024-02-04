@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import React from "react";
-
+import { UserButton } from '@clerk/nextjs'
 
 
 
@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <div className="shadow-md w-full fixed top-0 left-0 z-50">
     <div
-      className={`md:flex items-center justify-between bg-primary py-4 md:px-10 px-7`}
+      className={`md:flex items-center justify-between bg-primary/60 py-2 md:px-10 px-7`}
     >
       <div className="font-extrabold md:font-bold md:text-3xl text-xl pt-2 cursor-pointer flex items-center font-[Poppins] text-textColor">
         ECOMOSH
@@ -38,7 +38,7 @@ const Navbar = () => {
         } flex md:flex-row flex-col justify-evenly items-center font-bold md:font-normal`}
       >
         {Links.map((link) => (
-          <li key={link.name} className={`md:ml-8 text-xl ${open ? "text-primary " : "text-textColor"}  md:m-0 `}>
+          <li key={link.name} className={`md:ml-8 text-lg ${open ? "text-primary " : "text-textColor"}  md:m-0 `}>
             <Link
               href={link.link} // Use the link property as the target section ID
               spy={true}
@@ -49,7 +49,9 @@ const Navbar = () => {
               {link.name}
             </Link>
           </li>
+          
         ))}
+        <li className="px-6"><UserButton showName appearance={{variables: {colorPrimary: 'green'}}} afterSignOutUrl='/signout'></UserButton></li>
       </ul>
     </div>
   </div>

@@ -1,5 +1,7 @@
 import React from 'react'
+import { Inter } from 'next/font/google'
 
+const inter = Inter({ subsets: ['latin']})
 const page = () => {
   const ProductDetails = {
     name: "Baby Swing Set",
@@ -11,12 +13,12 @@ const page = () => {
   };
   return (
     <div className='h-screen w-screen bg-primary flex'>
-      <div id="left" className='h-full w-1/2 flex justify-center items-center' >
-        <img className="h-4/5 rounded-md" src="\assets\swing.jpg" alt="" />
+      <div id="left" className='h-full w-1/2 flex justify-center items-center pt-10' >
+          <img className="h-4/5 rounded-md" src="\assets\swing.jpg" alt="" />
       </div>
-      <div id="right" className=' h-full w-1/2 flex justify-evenly items-center flex-col pr-20'>
+      <div id="right" className=' h-full w-1/2 flex justify-evenly items-center flex-col pr-20 pt-20'>
         <div className='flex justify-center items-center flex-col'>
-          <h1 className="text-textColor text-5xl font-bold font-serif my-1">{ProductDetails.name}</h1>
+          <h1 className={`text-textColor text-5xl font-bold font-serif my-1`}>{ProductDetails.name}</h1>
           <p className='text-white text-xs font-serif'>{ProductDetails.by}</p>
         </div>
         <h1 className='text-textColor text-2xl font-bold font-sans'>${ProductDetails.cost}</h1>
@@ -25,7 +27,7 @@ const page = () => {
           <p className='text-textColor text-xs font-semibold my-2'>{ProductDetails.choice}</p>
           <div className='flex '>
             {ProductDetails.colors.map((colors, index) => {
-              return (<div className={`h-5 w-5 bg-${colors}-200 rounded-full mx-2`} key={index}></div>)
+              return (<div className={`h-5 w-5 rounded-full mx-2`} style={{ backgroundColor: `${colors}`}} key={index}></div>)
             })}
           </div>
         </div>
