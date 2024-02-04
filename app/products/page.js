@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import Landing from './components/Landing'
 
 const Page = () => {
   const details = {
@@ -6,13 +7,8 @@ const Page = () => {
   };
 
   return (
-    <div className="h-screen w-screen">
-      hi
-      {details.colors.map((color, index) => (
-        <div key={index} className={`h-20 w-20 bg-${color}-200`}>
-          hi
-        </div>
-      ))}
+    <div className=''>
+      <Landing />
     </div>
   );
 };
