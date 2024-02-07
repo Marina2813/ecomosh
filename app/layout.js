@@ -2,8 +2,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from 'next/script'
 import Navbar from "./components/Navbar";
-import { ClerkProvider } from '@clerk/nextjs'
-import { neobrutalism, shadesOfPurple,dark } from "@clerk/themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +12,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider appearance={{variables: {colorTextOnPrimaryBackground: '#323924', colorBackground: '#FBFADA'}}}>
     <html lang="en">
       <head><link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,6 +22,5 @@ export default function RootLayout({ children }) {
         <Script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></Script>
         <Script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></Script></body>
     </html>
-    </ClerkProvider>
   );
 }

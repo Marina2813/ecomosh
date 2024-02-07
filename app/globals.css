@@ -3,9 +3,19 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
-.cursivefont{font-family: 'Cedarville Cursive', cursive;}
 
-::-webkit-scrollbar{
+.cursivefont {
+    font-family: 'Cedarville Cursive', cursive;
+}
+
+::-webkit-scrollbar {
     height: 0;
     width: 0;
+}
+
+.mybox {
+    border-radius: 50px;
+    background: #79a481;
+    box-shadow: 20px 20px 60px #3f5543,
+        -20px -20px 60px #b3f3bf;
 }

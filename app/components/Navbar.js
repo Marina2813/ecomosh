@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import React from "react";
-import { UserButton } from '@clerk/nextjs'
 
 
 
@@ -51,8 +50,7 @@ const Navbar = () => {
           </li>
           
         ))}
-        <li className="px-6"><UserButton showName appearance={{variables: {colorPrimary: 'green'}}} afterSignOutUrl='/signout'></UserButton></li>
-      </ul>
+        </ul>
     </div>
   </div>
   )
