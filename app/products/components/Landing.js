@@ -1,107 +1,78 @@
 "use client";
-import React from "react";
-import Card from "./Card";
-const Landing = () => {
-  const ProductList = [
-    {
-      name: "Babywear",
-      img: "/assets/babywear.png",
-      link: "/products/babywear",
-      cost: "Rs. 1000",
-      brand: "Johnson",
-    },
-    {
-      name: "Babywear1",
-      img: "/assets/babywear.png",
-      link: "/products/babywear",
-      cost: "Rs. 1000",
-      brand: "Vicks",
-    },
-    {
-      name: "Babywear",
-      img: "/assets/babywear.png",
-      link: "/products/babywear",
-      cost: "Rs. 1000",
-      brand: "Xrg",
-    },
-    {
-      name: "Babywear",
-      img: "/assets/babywear.png",
-      link: "/products/babywear",
-      cost: "Rs. 1000",
-      brand: "Xrg",
-    },
-    {
-      name: "Babywear",
-      img: "/assets/babywear.png",
-      link: "/products/babywear",
-      cost: "Rs. 1000",
-      brand: "Xrg",
-    },
-    {
-      name: "Babywear",
-      img: "/assets/babywear.png",
-      link: "/products/babywear",
-      cost: "Rs. 1000",
-      brand: "Xrg",
-    },
-    {
-      name: "Babywear",
-      img: "/assets/babywear.png",
-      link: "/products/babywear",
-      cost: "Rs. 1000",
-      brand: "Xrg",
-    },
-    {
-      name: "Babywear",
-      img: "/assets/babywear.png",
-      link: "/products/babywear",
-      cost: "Rs. 1000",
-      brand: "Xrg",
-    },
-    {
-      name: "Babywear",
-      img: "/assets/babywear.png",
-      link: "/products/babywear",
-      cost: "Rs. 1000",
-      brand: "Xrg",
-    },
-    
-    
-    
-  ];
+import styled from "styled-components";
+import Navbar from "../../components/Navbar";
+import Products from "./product";
 
-  const productDetails = {
-    name: "Babywear",
-    price: "Rs. 1000",
-    colors: ["yellow", "blue", "green"],
-  }
+const Container = styled.div``;
 
+const Title = styled.h1`
+  margin: 20px;
+`;
+
+const FilterContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Filter = styled.div`
+  margin: 20px;
+`;
+
+const FilterText = styled.span`
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 20px;
+`;
+
+const Select = styled.select`
+  padding: 10px;
+  margin-right: 20px;
+`;
+
+const Option = styled.option``;
+
+const ProductList = () => {
   return (
-    <div
-    className="h-screen w-screen p-8 grid grid-cols-2 "
-    style={{ gridTemplateColumns: "0.4fr 1fr" }}
-  >
-    <div id="left" className="h-full w-4/5 z-0  flex flex-col items-start ">
-      <div id="up" className="h-1/3 w-full bg-green-200">
-        upper
-      </div>
-      <div id="lower" className="h-2/3 w-full bg-red-200 ">
-        
-      </div>
-    </div>
-    <div id="right" className="flex flex-wrap  h-full overflow-visible  z-10">
-      {ProductList.map((product, key) => {
-        return (
-          <div className={`flex h-[60vh] w-1/4 py-1 cell-item transform transition duration-300 hover:scale-110 hover:z-50 bg-white border-y-4 border-x-2`}>
-            <Card key={key} name={product.name} img={product.img} link={product.link} cost={product.cost} brand={product.brand} />
-          </div>
-        );
-      })}
-    </div>
-  </div>
-  
+    <Container>
+      <Navbar />
+      <Title>Dresses</Title>
+      <FilterContainer>
+        <Filter>
+          <FilterText>Filter Products:</FilterText>
+          <Select>
+            <Option disabled selected>
+              Color
+            </Option>
+            <Option>White</Option>
+            <Option>Black</Option>
+            <Option>Red</Option>
+            <Option>Blue</Option>
+            <Option>Yellow</Option>
+            <Option>Green</Option>
+          </Select>
+          <Select>
+            <Option disabled selected>
+              Size
+            </Option>
+            <Option>XS</Option>
+            <Option>S</Option>
+            <Option>M</Option>
+            <Option>L</Option>
+            <Option>XL</Option>
+          </Select>
+        </Filter>
+        <Filter>
+          <FilterText>Sort Products:</FilterText>
+          <Select>
+            <Option selected>Newest</Option>
+            <Option>Price (asc)</Option>
+            <Option>Price (desc)</Option>
+          </Select>
+        </Filter>
+      </FilterContainer>
+      <Products />
+    </Container>
   );
 };
 
-export default Landing;
+export default ProductList;

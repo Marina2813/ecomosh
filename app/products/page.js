@@ -7,7 +7,7 @@ const Page = () => {
   };
 
   return (
-    <div className=''>
+    <div className='bg-primary'>
       <Landing />
     </div>
   );
