@@ -18,7 +18,8 @@ module.exports = {
         textColor:"#323924",
         textColor2: "#ffffff",
         boxcolor: "#828973",
-        gradColor: "#FFF8E3",
+        gradColor: "#FBFADA",
+        newColor: "D9D9D9",
       }
     },
   },
