@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import profileCard from './components/profileCard'
+import ProfileCard from './components/profileCard'
 
 const details = {
     firstName: 'Sara',
@@ -25,7 +25,7 @@ const Profile = () => {
                 </div>
             </div>
             <div className='h-full w-full flex '>
-            <profileCard/>
+                <ProfileCard {...details} />
                 <div className='h-full w-1/2 flex  flex-col justify-end pb-8 items-start pl-8 '>
                     <div className='h-1/4 w-3/4 rounded-md bg-blue-200 my-3'></div>
                     <div className='h-1/4 w-3/4 rounded-md bg-blue-200 my-3'></div>

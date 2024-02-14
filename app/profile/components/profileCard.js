@@ -1,6 +1,6 @@
 import React from 'react'
 
-const profileCard = () => {
+const ProfileCard = (details) => {
     return (
 
         <div className='h-full w-1/2 flex justify-end pr-4 items-end pb-10 relative'>
@@ -38,4 +38,4 @@ const profileCard = () => {
     )
 }
 
-export default profileCard
+export default ProfileCard
