@@ -1,10 +1,14 @@
 import React from 'react'
+import ProfileForm from './addingForm'
 
 const ProfileCard = (details) => {
     return (
 
-        <div className='h-full w-1/2 flex justify-end pr-4 items-end pb-10 relative'>
-            <div className='h-[80%] w-[70%] rounded-md mr-2 bg-white/40 relative pl-4'>
+        <div className='h-full w-1/2 flex justify-end pr-4 items-end pb-10'>
+            <div className='h-[80%] w-[60%] bg-white absolute left-[30%] top-[10%] z-10'>
+                <ProfileForm {...details}/>
+            </div>
+            <div className='h-[80%] w-[70%] rounded-md mr-2 bg-white/40 relative pl-4 shadow-xl shadow-textColor'>
                 <div className='h-32 w-32 bg-slate-400 absolute -top-16 left-4 rounded-full'>
                     <img src="/assets/profile.webp" alt="" className='h-full w-full rounded-full' />
                 </div>
