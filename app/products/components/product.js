@@ -10,10 +10,11 @@ import {
     width: 100%;
     height: 100%;
     position: absolute;
+    border-radius: 10px;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.2);
-    z-index: 3;
+    z-index: 30;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,13 +24,14 @@ import {
   
   const Container = styled.div`
     flex: 1;
+    flex-direction: column;
     margin: 5px;
-    min-width: 280;
+    width: 50%;
+    border-radius: 10px;
     height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f5fbfd;
     position: relative;
     &:hover ${Info} {
       opacity: 1;
@@ -46,7 +48,6 @@ import {
   
   const Image = styled.img`
     height: 75%;
-    margin-left: 50px;
     z-index: 2;
   `;
   
@@ -66,26 +67,34 @@ import {
       transform: scale(1.1);
     }
   `;
+
   
-  const Product = ({ item }) => {
+  
+const Product = ({ item }) => {
     return (
-      <Container>
-        <Circle />
-        <Image src={item.img} />
-        <Info>
-          <Icon>
-            <ShoppingCartOutlined />
-          </Icon>
-          <Icon>
-            <SearchOutlined />
-          </Icon>
-          <Icon>
-            <FavoriteBorderOutlined />
-          </Icon>
-        </Info>
-      </Container>
+        <div className="flex p-4 rounded-xl ">
+            <Container className="bg-gradColor/60">
+                <Circle />
+                <Image src={item.img} />
+                <div className="z-10 flex flex-col items-center">
+                    <h1 className="text-xl font-bold">{item.name}</h1>
+                    <p className="text-gray-500">${item.price}</p>
+                </div>
+                <Info>
+                    <Icon>
+                        <ShoppingCartOutlined />
+                    </Icon>
+                    <Icon>
+                        <SearchOutlined />
+                    </Icon>
+                    <Icon>
+                        <FavoriteBorderOutlined />
+                    </Icon>
+                </Info>
+            </Container>
+        </div>
     );
-  };
+};
   
   export default Product;
   

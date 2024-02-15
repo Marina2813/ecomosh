@@ -1,9 +1,11 @@
 "use client";
 import styled from "styled-components";
 import Navbar from "../../components/Navbar";
-import Products from "./product";
+import ProductName from "./productName";
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding-top: 3rem;
+`;
 
 const Title = styled.h1`
   margin: 20px;
@@ -27,6 +29,8 @@ const FilterText = styled.span`
 const Select = styled.select`
   padding: 10px;
   margin-right: 20px;
+  border-radius: 8px;
+  cursor: pointer;
 `;
 
 const Option = styled.option``;
@@ -35,7 +39,7 @@ const ProductList = () => {
   return (
     <Container>
       <Navbar />
-      <Title>Dresses</Title>
+      <Title className="text-5xl md:w-full text-center font-bold text-textColor">Baby Dresses</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
@@ -70,7 +74,7 @@ const ProductList = () => {
           </Select>
         </Filter>
       </FilterContainer>
-      <Products />
+      <ProductName />
     </Container>
   );
 };
