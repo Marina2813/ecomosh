@@ -1,6 +1,8 @@
+'use client';
 import React from 'react'
 import Navbar from '../components/Navbar'
 import ProfileCard from './components/profileCard'
+import Cards from './components/Card'
 
 const details = {
     firstName: 'Sara',
@@ -14,9 +16,10 @@ const details = {
 }
 const Profile = () => {
     return (
-        <div className='h-screen w-screen flex bg-primary justify-center items-center'>
+        <div className='h-screen w-screen flex bg-primary justify-center items-center relative'>
             <div className='h-full w-1/5 bg-white/20 '>
                 <div className='h-full w-full flex flex-col justify-evenly items-center font-bold text-xl text-textColor'>
+                    <h1 className='pb-10 text-3xl font-serif'>Ecomosh</h1>
                     <h1>Dashboard</h1>
                     <h1>Wishlist</h1>
                     <h1>Payements</h1>
@@ -27,9 +30,9 @@ const Profile = () => {
             <div className='h-full w-full flex '>
                 <ProfileCard {...details} />
                 <div className='h-full w-1/2 flex  flex-col justify-end pb-8 items-start pl-8 '>
-                    <div className='h-1/4 w-3/4 rounded-md bg-blue-200 my-3'></div>
-                    <div className='h-1/4 w-3/4 rounded-md bg-blue-200 my-3'></div>
-                    <div className='h-1/4 w-3/4 rounded-md bg-blue-200 my-3'></div>
+                    <Cards title="Your Orders" img="/assets/babyswing2.jpg" productname="Windson craft Baby swingset for kids with pillows 6 months to 4 years in white,grey" msg="Delivered Yesterday"/>
+                    <Cards title="Your Cart" img="/assets/babyswing2.jpg" productname="Windson craft Baby swingset for kids with pillows 6 months to 4 years in white,grey" msg="Checkout"/>
+                    <Cards title="Rewards & Coupons" productname="Many amazing offers are waiting for you, come join us............"/>
                 </div>
             </div>
 
