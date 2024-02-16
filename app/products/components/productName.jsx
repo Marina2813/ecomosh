@@ -6,7 +6,7 @@ const ProductName = () => {
     {
       id: 1,
       img: "/assets/dress.png",
-      name: "Dress",
+      name: "Baby",
       price: "300",
     },
     {

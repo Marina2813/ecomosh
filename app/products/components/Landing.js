@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar";
 import ProductName from "./productName";
 
 const Container = styled.div`
-  padding-top: 3rem;
+  padding-top: 4rem;
 `;
 
 const Title = styled.h1`
@@ -21,12 +21,19 @@ const Filter = styled.div`
 `;
 
 const FilterText = styled.span`
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
   font-size: 20px;
   font-weight: 600;
   margin-right: 20px;
 `;
 
 const Select = styled.select`
+@media (max-width: 768px) {
+  font-size: 12px;
+}
   padding: 10px;
   margin-right: 20px;
   border-radius: 8px;
@@ -39,7 +46,7 @@ const ProductList = () => {
   return (
     <Container>
       <Navbar />
-      <Title className="text-5xl md:w-full text-center font-bold text-textColor">Baby Dresses</Title>
+      <Title className="md:text-5xl text-xl md:w-full font-bold text-textColor">Baby Dresses</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
