@@ -19,6 +19,7 @@ const Profile = () => {
         <div className='h-screen w-screen flex bg-primary justify-center items-center relative'>
             <div className='h-full w-1/5 bg-white/20 '>
                 <div className='h-full w-full flex flex-col justify-evenly items-center font-bold text-xl text-textColor'>
+                    <h1 className='pb-10 text-3xl font-serif'>Ecomosh</h1>
                     <h1>Dashboard</h1>
                     <h1>Wishlist</h1>
                     <h1>Payements</h1>

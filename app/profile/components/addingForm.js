@@ -14,7 +14,7 @@ const loginValidation = Yup.object().shape({
     .required('Name is required.')
 })
 
-function ProfileForm (details){
+function ProfileForm(details) {
 
   const isLoading = false
   const initialProps = {
@@ -30,33 +30,38 @@ function ProfileForm (details){
 
   return (
 
-    <div className=' flex items-center justify-center h-full w-full'>
-        <div className="flex flex-col w-fit mb-5">
-          <p className="text-2xl font-bold">Add Details </p>
-          <div className="w-3/5 h-[3px] bg-primary"></div>
-        </div>
+    <div className=' flex flex-col items-center justify-center h-full w-full rounded-md'>
+      <div className="flex flex-col w-fit mb-5 pb-5">
+        <p className="text-2xl font-bold">Edit Details </p>
+        <div className="w-3/5 h-[3px] bg-textColor"></div>
+      </div>
 
-       <Formik initialValues={initialProps} validationSchema={loginValidation}>
+      <Formik initialValues={initialProps} validationSchema={loginValidation}>
         {() => (
-        
+
           <Form className='flex flex-col h-[50vh] justify-evenly'>
             <div className='flex justify-between'>
-            <Field
-              disabled={isLoading}
-              name="name"
-              type="text"
-              label="First Name"
-              value={details.firstName}
-              component={CustomInput}
-            />
-            <Field
-              disabled={isLoading}
-              name="name"
-              type="text"
-              label="Last Name"
-              value={details.lastName}
-              component={CustomInput}
-            />
+              <div className='w-[48%]'>
+                <Field
+                  disabled={isLoading}
+                  name="name"
+                  type="text"
+                  label="First Name"
+                  value={details.firstName}
+                  component={CustomInput}
+                />
+              </div>
+              <div className='w-[48%]'>
+                <Field
+                  disabled={isLoading}
+                  name="name"
+                  type="text"
+                  label="Last Name"
+                  value={details.lastName}
+                  component={CustomInput}
+                />
+              </div>
+
             </div>
             <Field
               disabled={isLoading}
@@ -74,23 +79,30 @@ function ProfileForm (details){
               value={details.email}
               component={CustomInput}
             />
+            <Field
+              disabled={isLoading}
+              name="number"
+              type="number"
+              label="Phone Number"
+              value={details.phoneNo}
+              component={CustomInput}
+            />
             
+
             <div className="">
               <button
-                className="button bg-textColorPrimary mt-3 py-2 px-4 rounded-lg text-white font-bold flex items-center text-sm hover:opacity-80 transition-all duration-300"
+                className="button bg-textColor mt-3 py-2 px-4 rounded-lg text-primary font-bold flex items-center text-sm hover:opacity-80 transition-all duration-300"
                 disabled={isLoading}
                 type="submit"
               >
-                {isLoading ? <LoadingOutlined /> : <CheckOutlined />}
-                &nbsp;
-                {isLoading ? 'Adding' : 'Add'}
+                confirm
               </button>
             </div>
           </Form>
         )}
-       </Formik>
-      </div>
-    
+      </Formik>
+    </div>
+
   )
 }
 
