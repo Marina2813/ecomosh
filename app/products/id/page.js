@@ -1,13 +1,15 @@
+'use client';
 import React, { useState } from 'react'
 import { Inter } from 'next/font/google'
 import Navbar from '@/app/components/Navbar';
-import { useState } from 'react';
 
 
-const [show,setshow ] = useState(false)
+
+
 
 const inter = Inter({ subsets: ['latin']})
 const page = () => {
+  const [show,setshow ] = useState(false)
   const ProductDetails = {
     name: "Baby Swing Set",
     by: "By Parkar & Charlotte",
