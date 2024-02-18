@@ -1,13 +1,13 @@
+"use client";
 import React, { useState } from 'react'
-import { Inter } from 'next/font/google'
+import { Inter,Poppins} from 'next/font/google'
 import Navbar from '@/app/components/Navbar';
-import { useState } from 'react';
 
 
-const [show,setshow ] = useState(false)
 
 const inter = Inter({ subsets: ['latin']})
 const page = () => {
+  const [show,setshow ] = useState(false)
   const ProductDetails = {
     name: "Baby Swing Set",
     by: "By Parkar & Charlotte",
@@ -36,7 +36,7 @@ const page = () => {
       </div>
       <div id="right" className=' h-full md:w-1/2 w-full flex justify-evenly items-center flex-col md:pr-20 pt-20'>
         <div className='flex justify-center items-center flex-col'>
-          <h1 className={`text-textColor md:text-5xl text-3xl font-bold font-serif my-1`}>{ProductDetails.name}</h1>
+          <h1 className={`text-textColor md:text-5xl text-3xl font-bold font-[Poppins] my-1`}>{ProductDetails.name}</h1>
           <p className='text-white text-xs font-serif'>{ProductDetails.by}</p>
         </div>
         <h1 className='text-textColor text-2xl font-bold font-sans'>${ProductDetails.cost}</h1>
