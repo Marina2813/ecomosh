@@ -13,6 +13,8 @@
     "@clerk/nextjs": "^4.29.5",
     "@clerk/themes": "^1.7.9",
     "@material-ui/icons": "^4.11.3",
+    "firebase": "^10.8.0",
+    "firestore": "^1.1.6",
     "formik": "^2.4.5",
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.1",

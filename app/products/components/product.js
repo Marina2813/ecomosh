@@ -75,10 +75,10 @@ const Product = ({ item }) => {
         <div className="flex p-4 rounded-xl ">
             <Container className="bg-gradColor/60">
                 <Circle />
-                <Image src={item.img} />
+                <Image src={item.ImgUrl} />
                 <div className="z-10 flex flex-col items-center">
-                    <h1 className="text-xl font-bold">{item.name}</h1>
-                    <p className="text-gray-500">${item.price}</p>
+                    <h1 className="text-xl font-bold">{item.Name}</h1>
+                    <p className="text-gray-500">${item.Price}</p>
                 </div>
                 <Info>
                     <Icon>
