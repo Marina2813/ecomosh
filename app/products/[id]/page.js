@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Inter,Poppins} from 'next/font/google'
 import Navbar from '@/app/components/Navbar';
+import Reviews from '../components/reviews';
 
 
 
@@ -52,8 +53,8 @@ const page = () => {
         <button className='bg-textColor text-white py-2 px-4 rounded-xl my-6 capitalize font-serif"'>ADD TO CART</button>
       </div>
     </div>
-    <div className=' h-screen w-screen bg-primary'>
-
+    <div className=' w-screen bg-primary'>
+        <Reviews/>
     </div>
     </>
   )
