@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import {db} from '@/utils/firebaseConfig'
 import { getDocs, collection } from 'firebase/firestore'
+import LoadingCard from './components/loadingCard';
 
 const Cart = () => {
   const [productDetails, setproductDetails] = useState(null);
@@ -31,7 +32,7 @@ const Cart = () => {
           <div className='w-1/4 flex justify-center items-center h-full font-bold'>Total</div>
         </div>
         <div className='h-[80%] w-full overflow-auto'>
-         { !loading && <div className='h-full w-full'>
+         {!loading && <div className='h-full w-full'>
         {productDetails && productDetails.map((item,index)=>{
           return(
             <div className='w-full h-[30%] my-6' key={index}>
@@ -55,7 +56,11 @@ const Cart = () => {
         </div>
           )
         })}
-        </div>}{loading && <div>Loading</div>}
+        </div>}{loading && <>
+        <LoadingCard/>
+        <LoadingCard/>
+        <LoadingCard/>
+        </>}
         </div>
         
         
