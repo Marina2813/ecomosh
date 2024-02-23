@@ -8,6 +8,8 @@ const Signup= () => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
+  const [address, setAddress] = useState('')
+  const [phoneNo, setPhoneNo] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const auth = getAuth(app)
@@ -20,11 +22,15 @@ const handleSignUp = async() =>{
       setDoc(user, {
         FirstName: firstName,
         LastName: lastName,
-        Email: email
+        Email: email,
+        Address: address,
+        PhoneNo: phoneNo
       })
       setEmail('');
       setPassword('');
       setConfirmPassword('');
+      setAddress('');
+      setPhoneNo('');
     }
   } catch (error) {
     console.log(error)
@@ -41,17 +47,18 @@ const handleSignUp = async() =>{
         </div>
         <div id="right" className='bg-gradColor h-full w-1/2  rounded-r-lg  shadow-textColor '>
           <div className='h-full w-full  flex flex-col justify-center items-center'>
-            <h1 className='text-5xl mt-20 font-serif font-bold text-textColor'>ECOMOSH</h1>
+            <h1 className='text-5xl mt-10 font-serif font-bold text-textColor'>ECOMOSH</h1>
             <div className='flex flex-col h-full w-full justify-center items-center'>
                 <div className='w-4/5 '>
                 <input type="text" placeholder='Hannah' className=' my-4 mt-2 h-10  rounded-lg px-2 w-1/2 bg-gradColor text-textColor shadow-xl focus:outline-dashed ' onChange={(a)=>{setFirstName(a.target.value); console.log(firstName)} } />
                 <input type="text" placeholder='Jacob' className=' my-4 mt-2 h-10  rounded-lg px-2 w-1/2 bg-gradColor text-textColor shadow-xl focus:outline-dashed' onChange={(a)=>{setLastName(a.target.value)}} />
                 </div>
-              
               <input type="email" placeholder='abc@gmail.com' className=' my-4 mt-2 h-10 rounded-lg px-2 w-4/5 bg-gradColor text-textColor shadow-xl focus:outline-dashed' onChange={(a)=>{setEmail(a.target.value)}}/>
+              <input type='text' placeholder='221B, Baker Street, London' className='my-4 mt-2 h-10 rounded-lg px-2 w-4/5 bg-gradColor text-textColor shadow-xl focus:outline-dashed' onChange={(a)=>{setAddress(a.target.value)}}/>
+              <input type='text' placeholder='921435678' className='my-4 mt-2 h-10 rounded-lg px-2 w-4/5 bg-gradColor text-textColor shadow-xl focus:outline-dashed' onChange={(a)=>{setPhoneNo(a.target.value)}}/>
               <input type="password" placeholder='******' className=' my-4 mt-2 h-10 rounded-lg px-2 w-4/5 bg-gradColor text-textColor shadow-xl focus:outline-dashed' onChange={(a)=>{setPassword(a.target.value)}}/>
               <input type="password" placeholder='confirm password' className=' my-4 h-10 rounded-lg px-2 w-4/5 bg-gradColor text-textColor shadow-xl focus:outline-dashed' onChange={(a)=>{setConfirmPassword(a.target.value)}}/>
-              <button className='mybutton mt-10' onClick={handleSignUp}>Sign Up</button>
+              <button className='mybutton mt-1' onClick={handleSignUp}>Sign Up</button>
               <div className='flex text-xs m-2'>
                 <p>Already have an account?</p>
                 <button className=' text-indigo-600'><a href="/login">{" "} Login</a></button>
