@@ -1,7 +1,8 @@
 'use client';
 import React, { useState } from 'react'
 import {createUserWithEmailAndPassword, getAuth} from 'firebase/auth';
-import {app} from '@/utils/firebaseConfig';
+import {app, db} from '@/utils/firebaseConfig';
+import {doc, setDoc} from 'firebase/firestore'
 
 const Signup= () => {
   const [firstName, setFirstName] = useState('')
@@ -13,18 +14,14 @@ const Signup= () => {
 
 const handleSignUp = async() =>{
   try {
-    if (password==confirmPassword){
-      await createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed up 
-        const user = userCredential.user;
-        // ...
+    if (password===confirmPassword){
+      const usercredential = await createUserWithEmailAndPassword(auth, email, password)
+      const user = doc(db, 'users', usercredential.user.uid)
+      setDoc(user, {
+        FirstName: firstName,
+        LastName: lastName,
+        Email: email
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
       setEmail('');
       setPassword('');
       setConfirmPassword('');
@@ -45,7 +42,7 @@ const handleSignUp = async() =>{
         <div id="right" className='bg-gradColor h-full w-1/2  rounded-r-lg  shadow-textColor '>
           <div className='h-full w-full  flex flex-col justify-center items-center'>
             <h1 className='text-5xl mt-20 font-serif font-bold text-textColor'>ECOMOSH</h1>
-            <form className='flex flex-col h-full w-full justify-center items-center'>
+            <div className='flex flex-col h-full w-full justify-center items-center'>
                 <div className='w-4/5 '>
                 <input type="text" placeholder='Hannah' className=' my-4 mt-2 h-10  rounded-lg px-2 w-1/2 bg-gradColor text-textColor shadow-xl focus:outline-dashed ' onChange={(a)=>{setFirstName(a.target.value); console.log(firstName)} } />
                 <input type="text" placeholder='Jacob' className=' my-4 mt-2 h-10  rounded-lg px-2 w-1/2 bg-gradColor text-textColor shadow-xl focus:outline-dashed' onChange={(a)=>{setLastName(a.target.value)}} />
@@ -60,7 +57,7 @@ const handleSignUp = async() =>{
                 <button className=' text-indigo-600'><a href="/login">{" "} Login</a></button>
               </div>
 
-            </form>
+            </div>
           </div>
         </div>
       </div>
