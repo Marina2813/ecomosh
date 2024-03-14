@@ -1,8 +1,10 @@
 'use client';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import ProfileCard from './components/profileCard'
 import Cards from './components/Card'
+import {db} from '@/utils/firebaseConfig'
+import {doc,getDoc} from 'firebase/firestore'
 
 const details = {
     firstName: 'Sara',
@@ -15,6 +17,16 @@ const details = {
     order: []
 }
 const Profile = () => {
+    const [details,setDetails] = useState([])
+    useEffect(()=>{
+        const fetchData = async() =>{
+            const docReference = doc(db,'users',localStorage.getItem('id')) 
+            const value = await getDoc(docReference)
+            setDetails(value.data())
+            console.log(value.data().FirstName)
+        }
+        fetchData()
+    },[])
     return (
         <div className='h-screen w-screen flex bg-primary justify-center items-center relative'>
             <div className='h-full w-1/5 bg-white/20 '>

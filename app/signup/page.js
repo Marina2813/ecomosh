@@ -31,6 +31,7 @@ const handleSignUp = async() =>{
       setConfirmPassword('');
       setAddress('');
       setPhoneNo('');
+      localStorage.setItem('id',usercredential.user.uid);
     }
   } catch (error) {
     console.log(error)
