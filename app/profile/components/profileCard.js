@@ -24,20 +24,20 @@ const ProfileCard = (details) => {
                 <img src="/assets/pen.svg" alt="" className='absolute top-4 right-4 h-5 w-5' onClick={handleClick} />
                 <div>
                     <p className='pt-20'>Good Evening!!</p>
-                    <h1 className='font-bold text-xl'>{details.firstName} {details.lastName}</h1>
+                    <h1 className='font-bold text-xl'>{details.FirstName} {details.LastName}</h1>
                 </div>
                 <div className='h-[70%] w-full flex flex-col justify-evenly'>
                     <div>
                         <h1 className='font-bold text-xs'>ADDRESS: </h1>
-                        <p className='text-xs'>{details.address}</p>
+                        <p className='text-xs'>{details.Address}</p>
                     </div>
                     <div className='flex'>
                         <h1 className='font-bold text-xs pr-3'>PHONE: </h1>
-                        <p className='text-xs'> {details.phoneNo}</p>
+                        <p className='text-xs'> {details.PhoneNo}</p>
                     </div>
                     <div className='flex'>
                         <h1 className='font-bold text-xs pr-3'>EMAIL: </h1>
-                        <p className='text-xs'>{details.email}</p>
+                        <p className='text-xs'>{details.Email}</p>
                     </div>
                     <div className='flex'>
                         <h1 className='font-bold text-xs pr-3'>PASSWORD: </h1>
