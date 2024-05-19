@@ -19,7 +19,7 @@ import Link from 'next/link';
 // }
 const Profile = () => {
     const [details,setDetails] = useState({})
-    const [flag,setFlag] = useState(false)
+    const [flag,setFlag] = useState(true)
     
   useEffect(() => {
         const fetchDetails = async () => {
@@ -34,7 +34,11 @@ const Profile = () => {
             } else {
                 // doc.data() will be undefined in this case
                 console.log("No such document!");
+                setFlag(false);
             }
+            }
+            else{
+                setFlag(false);
             }
             
         }
